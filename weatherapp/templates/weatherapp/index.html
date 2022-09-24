@@ -40,25 +40,25 @@
                     <div class="card-body p-4">
             
                       <div class="d-flex bg-info p-2">
-                        <h4 class="flex-grow-1" style="color: #dc3545">{{i.city}}</h4>
-                        <h5 style="justify-content:center; align-items:center"><mark>15:07</mark></h5>
-                      </div>
+                        <h4 class="flex-grow-1" style="color: #dc3545">{{i.city}}</h4>        
+                        <h5 class="time text-Black">D/m/year -- day</h5>                        
+                     </div>
             
-                      <div class="d-flex flex-column text-center mt-4 mb-3">
+                      <div class="d-flex flex-column text-center mt-4 mb-3 p-0 bg-primary ">
                         <h6 class="display-4 mb-0 font-weight-bold" style="color: #1C2331;"> {{i.temp}} °C </h6>
-                        <span class="small" style="color: #868B94">{{i.desc}}</span>
+                        <span class="small" style="color: #dc3545">{{i.desc}}</span>
                       </div>
             
                       <div class="d-flex align-items-center">
-                        <div class="flex-grow-1" style="font-size: 1rem;">
-                          <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1"> 40 km/h
+                        <div class="flex-grow-1" style="font-size: 1.2rem; font-weight: bold">
+                          <div><i class="fas fa-wind fa-fw" style="color: #868B94;"></i> <span class="ms-1"> Speed:{{i.speed}} m/sn
                             </span></div>
-                          <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1"> 84% </span>
+                          <div><i class="fas fa-tint fa-fw" style="color: #868B94;"></i> <span class="ms-1"> Humidity: %{{i.humid}} </span>
                           </div>
-                          <div><i class="fas fa-sun fa-fw" style="color: #868B94;"></i> <span class="ms-1"> 0.2h </span>
+                          <div><i class="fas fa-sun fa-fw" style="color: #868B94;"></i> <span class="ms-1"> Coord: {{i.coord_long}}--{{i.coord_lati}} </span>
                           </div>
                         </div>
-                        <div>
+                        <div style="background-color:crimson; border-radius: 25px;">
                           <img src="http://openweathermap.org/img/wn/{{i.icon}}@2x.png"
                             width="100px">
                         </div>
@@ -77,6 +77,8 @@
         </div>
       </section>
 
-      <script src="{% static 'weatherapp/js/timeout.js' %}"></script>   
+      <script src="{% static 'weatherapp/js/timeout.js' %}"></script> 
+      {% comment %} <script src="{% static 'weatherapp/js/datetime.js' %}"></script>  {% endcomment %}
+         
 </body>
 </html>

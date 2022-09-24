@@ -5,6 +5,7 @@ from pprint import pprint
 from django.contrib import messages
 from .models import City
 
+
 def index(request):
     API_KEY = config("API_KEY")
     city = "Erzurum"
@@ -37,7 +38,11 @@ def index(request):
             "city" : city,
             "temp" : content["main"]["temp"],
             "icon" : content["weather"][0]["icon"],
-            "desc" : content["weather"][0]["description"]
+            "desc" : content["weather"][0]["description"],
+            "speed" : content["wind"]["speed"],
+            "humid" : content["main"]["humidity"],
+            "coord_long" : content["coord"]["lon"],
+            "coord_lati" : content["coord"]["lat"],
             # "id" : city.id
         }
         city_data.append(data)
@@ -56,6 +61,7 @@ def delete_city(request, id):
     city.delete()
     messages.warning(request, "City deleted")
     return redirect("home")
+
 
 
 
