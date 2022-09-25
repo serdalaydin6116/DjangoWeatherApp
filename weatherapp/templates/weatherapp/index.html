@@ -14,26 +14,37 @@
 
 <body>
     <section class="" style="background-color: #4114">
-        <div class="container py-5 h-100">
-            <h1 class='text-Black'>Weather App</h1>
-            {% if messages %}
+      <div class="container py-5 h-100">
+          <div class="d-flex align-items-center " >             
+              <h1 class="flex-grow-1" style="font-size: 1.3rem; font-weight: bold ; text-Black">Weather App</h1>            
+              <div id="clock" class="d-flex justify-content-center " style="font-size: 1rem; font-weight: bold">
+                  <p class="unit" id="hours"></p>
+                  <p  class="comma">:</p>
+                  <p class="unit" id="minutes"></p>
+                  <p  class="comma">:</p>
+                  <p class="unit" id="seconds"></p>
+                  <p class="unit" id="ampm"></p>
+              </div>
+               
+          </div>  
+          {% if messages %}
                 
-            {% for message in  messages%}
-                    <div class="message text-white">{{ message }}</div>
+          {% for message in  messages%}
+                <div class="message text-white">{{ message }}</div>
             
-            {% endfor %}
+          {% endfor %}
                 
-            {% endif %}
-            <form action="" method="post">
+          {% endif %}
+          <form action="" method="post">
                 {% csrf_token %}
                 <div class="input-group">
                     <input type="search" class="form-control rounded" placeholder="Search" name='city' aria-label="Search" aria-describedby="search-addon" />
                     <button type="submit" class="btn btn-primary" name='add_city'>SEARCH</button>
                 </div>
               
-            </form>
-            <br>
-            <hr>
+          </form>
+          <br>
+          <hr>
           <div class="row d-flex justify-content-center align-items-center h-100">
               
               {% for i in city_data  %}
@@ -43,18 +54,8 @@
             
                       <div class="d-flex bg-info p-2">
                         <h4 class="flex-grow-1" style="color: #dc3545">{{i.city}}</h4>
-                        <div id="clock">
-                            <p class="unit" id="hours"></p>
-                            <p  class="comma">:</p>
-                            <p class="unit" id="minutes"></p>
-                            <p  class="comma">:</p>
-                            <p class="unit" id="seconds"></p>
-                            <p class="unit" id="ampm"></p>
-                        </div>
-
-
-                               
-                        {% comment %} <h6 class="time text-Black">D/m/year --hour:minute</h6>                         {% endcomment %}
+                                                    
+                        <h6 class="time text-Black">Happy Day!</h6>                       
                      </div>
             
                       <div class="d-flex flex-column text-center mt-4 mb-3 p-0  ">
@@ -87,14 +88,13 @@
       
           </div>
       
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <script src="{% static 'weatherapp/js/timeout.js' %}"></script> 
-      {% comment %} <script src="{% static 'weatherapp/js/datetime.js' %}"></script>  {% endcomment %}
+<script src="{% static 'weatherapp/js/timeout.js' %}"></script> 
+<script src="{% static 'weatherapp/js/datetime.js' %}"></script>  
          
 </body>
 </html>
 
 
-<i class="fa-regular fa-droplet-percent"></i>
