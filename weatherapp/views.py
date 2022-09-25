@@ -20,12 +20,12 @@ def index(request):
             content = response.json()
             r_city = content["name"]
             if City.objects.filter(name=r_city):
-                messages.warning(request, f"{city} City already exists!")
+                messages.warning(request, f"{r_city} City already exists!")
             else:
                 City.objects.create(name=r_city)
             
         else:
-            messages.warning(request, "There is no city such {city}")
+            messages.warning(request, f"There is no city such that")
     
     city_data=[]
     cities=City.objects.all()
@@ -56,7 +56,7 @@ def index(request):
     return render(request, 'weatherapp/index.html', context)
 
 def delete_city(request, id):
-    # city=City.objects.get(id=id) objeyi çekemezse istenmeyen bir hata kodu döner.
+    # city=City.objects.get(id=id) by doing this results in returning unwanted errors.
     city=get_object_or_404(City, id=id)
     city.delete()
     messages.warning(request, f"{city} City deleted")
