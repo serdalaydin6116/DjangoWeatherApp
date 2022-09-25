@@ -14,7 +14,7 @@ def index(request):
     if u_city:
         url = f"https://api.openweathermap.org/data/2.5/weather?q={u_city}&appid={API_KEY}&units=metric"
         response = requests.get(url)
-        print(response.ok)
+        # print(response.ok)
         
         if response.ok:
             content = response.json()
