@@ -56,7 +56,7 @@ def index(request):
     return render(request, 'weatherapp/index.html', context)
 
 def delete_city(request, id):
-    # city=City.objects.get(id=id) objeyi çekemzse istenmeyen bir hata kodu döner.
+    # city=City.objects.get(id=id) objeyi çekemezse istenmeyen bir hata kodu döner.
     city=get_object_or_404(City, id=id)
     city.delete()
     messages.warning(request, f"{city} City deleted")
