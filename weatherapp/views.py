@@ -38,7 +38,7 @@ def index(request):
             "city" : city,
             "temp" : content["main"]["temp"],
             "icon" : content["weather"][0]["icon"],
-            "desc" : content["weather"][0]["description"],
+            "desc" : content["weather"][0]["description"].capitalize(),
             "speed" : content["wind"]["speed"],
             "humid" : content["main"]["humidity"],
             "coord_long" : content["coord"]["lon"],
