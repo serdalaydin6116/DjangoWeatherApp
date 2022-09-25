@@ -33,7 +33,7 @@
           {% if messages %}
                 
           {% for message in  messages%}
-                <div class="message text-black">{{ message }}</div>
+                <div class="message text-black mb-2" style="background-color:yellow">{{ message }}</div>
             
           {% endfor %}
                 
@@ -68,7 +68,7 @@
                         <h4 class="flex-grow-1" style="color: #dc3545">{{i.city}}</h4>
                        
                         
-                        <a href="{% url 'delete' city.id %}" class="btn btn-danger">&#10006;DELETE</a>
+                        <a href="{% url 'delete' i.city.id %}" class="btn btn-danger">&#10006;DELETE</a>
                      </div>
 
 
