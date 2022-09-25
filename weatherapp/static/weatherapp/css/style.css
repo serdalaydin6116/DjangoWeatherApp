@@ -1,0 +1,22 @@
+.unit{
+    background: black;
+    border-radius: 1rem;
+    box-shadow: 0 10px 10px rgb(158, 9, 9);
+    color: orangered;
+    font-family: 'Black Ops One', cursive;
+    font-size: 5em;
+    height: 100%;
+    line-height: 130px;
+    margin: 0 10px;
+    padding: 0.9rem;
+    text-align: center;
+    text-shadow: 0 2px 2px rgb(102, 102, 102);
+    width: 23%;
+  }
+  .comma{
+    /* width: 10%; */
+    font-size: 6rem;
+    height: 100%;
+    line-height: 60px;
+    
+  }
